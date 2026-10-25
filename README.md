@@ -1,5 +1,10 @@
 # su2-heatbath-gpu
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23644086.svg)](https://doi.org/10.5281/zenodo.23644086)
+
+Archived on Zenodo: all versions [doi:10.5281/zenodo.23644086](https://doi.org/10.5281/zenodo.23644086); v1.0.0 [doi:10.5281/zenodo.23644087](https://doi.org/10.5281/zenodo.23644087).
+
+
 A small, self-contained Monte Carlo generator of SU(2) pure-gauge configurations with the Wilson
 action on a periodic four-dimensional lattice, in double precision, for GPUs. One HIP source file
 (tested on an AMD Radeon 8060S integrated GPU, gfx1151, ROCm 7.1) and its mechanical CUDA port

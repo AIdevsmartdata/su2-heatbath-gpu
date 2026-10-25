@@ -1,0 +1,31 @@
+# date_utc 2026-10-25T12:38:39Z
+# cpu Intel(R) Core(TM) i5-14600KF ; online_cpus 17
+# loadavg_before 0.39 0.35 0.14
+# mem_available_GiB 28,3
+# nvidia-smi NVIDIA GeForce RTX 5060 Ti, 595.84
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=3.297846e-04 or_sweeps=200 or_s_par_sweep=1.492965e-04 liens_par_s_hb=4.9681e+07 liens_par_s_or=1.0974e+08 wall=0.097 P=0.6525811587
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=3.297467e-04 or_sweeps=200 or_s_par_sweep=1.491019e-04 liens_par_s_hb=4.9687e+07 liens_par_s_or=1.0988e+08 wall=0.097 P=0.6525811587
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=3.297267e-04 or_sweeps=200 or_s_par_sweep=1.494032e-04 liens_par_s_hb=4.9690e+07 liens_par_s_or=1.0966e+08 wall=0.097 P=0.6525811587
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.200540e-03 or_sweeps=200 or_s_par_sweep=5.739621e-04 liens_par_s_hb=2.1836e+08 liens_par_s_or=4.5673e+08 wall=0.357 P=0.6521292244
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.200512e-03 or_sweeps=200 or_s_par_sweep=5.739344e-04 liens_par_s_hb=2.1836e+08 liens_par_s_or=4.5675e+08 wall=0.356 P=0.6521292244
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.200523e-03 or_sweeps=200 or_s_par_sweep=5.739698e-04 liens_par_s_hb=2.1836e+08 liens_par_s_or=4.5672e+08 wall=0.357 P=0.6521292244
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=5.238807e-03 or_sweeps=100 or_s_par_sweep=2.516969e-03 liens_par_s_hb=2.5332e+08 liens_par_s_or=5.2726e+08 wall=0.777 P=0.6515733099
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=5.239072e-03 or_sweeps=100 or_s_par_sweep=2.516808e-03 liens_par_s_hb=2.5331e+08 liens_par_s_or=5.2730e+08 wall=0.777 P=0.6515733099
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=5.240036e-03 or_sweeps=100 or_s_par_sweep=2.517356e-03 liens_par_s_hb=2.5326e+08 liens_par_s_or=5.2718e+08 wall=0.777 P=0.6515733099
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=1.597246e-02 or_sweeps=100 or_s_par_sweep=7.864377e-03 liens_par_s_hb=2.6260e+08 liens_par_s_or=5.3333e+08 wall=2.386 P=0.6514175019
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=1.596981e-02 or_sweeps=100 or_s_par_sweep=7.864755e-03 liens_par_s_hb=2.6264e+08 liens_par_s_or=5.3330e+08 wall=2.386 P=0.6514175019
+# su2_cuda : 1 GPU, NVIDIA GeForce RTX 5060 Ti sm_120
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=1.597654e-02 or_sweeps=100 or_s_par_sweep=7.866035e-03 liens_par_s_hb=2.6253e+08 liens_par_s_or=5.3322e+08 wall=2.387 P=0.6514175019
+# loadavg_after 0.53 0.38 0.16
+written bench/out/cuda_20261025T123839Z.txt

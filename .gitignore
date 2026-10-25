@@ -1,0 +1,6 @@
+bin/
+tests/out/
+bench/out/
+*.npy
+*.part
+__pycache__/

@@ -1,0 +1,25 @@
+{
+  "title": "su2-heatbath-gpu: SU(2) Wilson-action heat-bath generator for GPUs (HIP and CUDA)",
+  "upload_type": "software",
+  "description": "<p>A small Monte Carlo generator of SU(2) pure-gauge configurations with the Wilson action on a periodic four-dimensional lattice, in double precision, for AMD (HIP) and NVIDIA (CUDA) GPUs. Exact heat bath (Creutz / Kennedy-Pendleton) plus overrelaxation, checkerboard updates and counter-based Philox4x32-10 random numbers: on a given GPU and build, runs are reproducible bit for bit.</p><p>The repository contains the HIP source and its mechanical CUDA port, a CPU (OpenMP) transcription of the same algorithm used as a throughput baseline, an independent CPU Metropolis reference, a test suite with criteria frozen before the first run, bit-level anchors to archived runs, measured throughputs (link updates per second) and a description of silent data corruption observed on an AMD integrated GPU. It is a tool, not a physics result.</p><p>The code and documentation were written by AI coding agents under the direction of the author; see AI_USE.md.</p>",
+  "creators": [
+    {
+      "name": "Rémondière, Kévin",
+      "orcid": "0009-0008-2443-7166"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "lattice gauge theory",
+    "SU(2)",
+    "Wilson action",
+    "Monte Carlo",
+    "heat bath",
+    "GPU",
+    "HIP",
+    "CUDA",
+    "reproducibility"
+  ],
+  "notes": "Tested on an AMD Radeon 8060S (gfx1151, ROCm 7.1) and an NVIDIA GeForce RTX 5060 Ti (sm_120, CUDA 13.3). See README.md for the measured throughputs, docs/VALIDATION.md for the validation and AI_USE.md for the use of AI."
+}

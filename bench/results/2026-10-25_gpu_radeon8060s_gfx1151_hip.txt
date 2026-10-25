@@ -1,0 +1,31 @@
+# date_utc 2026-10-25T12:38:42Z
+# cpu AMD RYZEN AI MAX+ 395 w/ Radeon 8060S ; online_cpus 32
+# loadavg_before 12.29 12.53 12.22
+# mem_available_GiB 100,1
+# hipcc HIP version: 7.1.52801-9999
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=2.390362e-04 or_sweeps=200 or_s_par_sweep=1.022567e-04 liens_par_s_hb=6.8542e+07 liens_par_s_or=1.6022e+08 wall=0.090 P=0.6545502659
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=2.678280e-04 or_sweeps=200 or_s_par_sweep=9.766535e-05 liens_par_s_hb=6.1174e+07 liens_par_s_or=1.6776e+08 wall=0.095 P=0.6545502659
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=8 beta=2.5 V=4096 hb_sweeps=200 hb_s_par_sweep=2.465464e-04 or_sweeps=200 or_s_par_sweep=1.020738e-04 liens_par_s_hb=6.6454e+07 liens_par_s_or=1.6051e+08 wall=0.090 P=0.6545502659
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.685246e-03 or_sweeps=200 or_s_par_sweep=7.282263e-04 liens_par_s_hb=1.5555e+08 liens_par_s_or=3.5998e+08 wall=0.504 P=0.6526677559
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.673104e-03 or_sweeps=200 or_s_par_sweep=7.129246e-04 liens_par_s_hb=1.5668e+08 liens_par_s_or=3.6770e+08 wall=0.498 P=0.6526677559
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=16 beta=2.5 V=65536 hb_sweeps=200 hb_s_par_sweep=1.580770e-03 or_sweeps=200 or_s_par_sweep=6.430982e-04 liens_par_s_hb=1.6583e+08 liens_par_s_or=4.0763e+08 wall=0.466 P=0.6526677559
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=7.495805e-03 or_sweeps=100 or_s_par_sweep=3.505032e-03 liens_par_s_hb=1.7705e+08 liens_par_s_or=3.7863e+08 wall=1.110 P=0.6518297304
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=7.493042e-03 or_sweeps=100 or_s_par_sweep=3.496928e-03 liens_par_s_hb=1.7711e+08 liens_par_s_or=3.7951e+08 wall=1.110 P=0.6518297304
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=24 beta=2.5 V=331776 hb_sweeps=100 hb_s_par_sweep=7.391424e-03 or_sweeps=100 or_s_par_sweep=3.491091e-03 liens_par_s_hb=1.7955e+08 liens_par_s_or=3.8014e+08 wall=1.099 P=0.6518297304
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=2.323092e-02 or_sweeps=100 or_s_par_sweep=1.013954e-02 liens_par_s_hb=1.8055e+08 liens_par_s_or=4.1366e+08 wall=3.356 P=0.6517536158
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=2.319959e-02 or_sweeps=100 or_s_par_sweep=1.017085e-02 liens_par_s_hb=1.8079e+08 liens_par_s_or=4.1238e+08 wall=3.359 P=0.6517536158
+# su2_hip : 1 GPU, Radeon 8060S Graphics gfx1151
+BENCH L=32 beta=2.5 V=1048576 hb_sweeps=100 hb_s_par_sweep=2.323000e-02 or_sweeps=100 or_s_par_sweep=1.016907e-02 liens_par_s_hb=1.8056e+08 liens_par_s_or=4.1246e+08 wall=3.359 P=0.6517536158
+# loadavg_after 12.65 12.60 12.25
+written bench/out/hip_20261025T123842Z.txt

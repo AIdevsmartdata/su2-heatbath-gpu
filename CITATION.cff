@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "su2-heatbath-gpu: SU(2) Wilson-action heat-bath generator for GPUs (HIP and CUDA)"
+abstract: >-
+  A small Monte Carlo generator of SU(2) pure-gauge configurations with the Wilson action on a
+  periodic four-dimensional lattice, in double precision, for AMD (HIP) and NVIDIA (CUDA) GPUs:
+  exact heat bath (Creutz / Kennedy-Pendleton) plus overrelaxation, checkerboard updates and
+  counter-based Philox4x32-10 random numbers, bit-reproducible on a given GPU and build, with a
+  test suite, an independent CPU reference implementation and a CPU (OpenMP) baseline.
+authors:
+  - family-names: "Rémondière"
+    given-names: "Kévin"
+    orcid: "https://orcid.org/0009-0008-2443-7166"
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-10-25"
+keywords:
+  - lattice gauge theory
+  - SU(2)
+  - Wilson action
+  - Monte Carlo
+  - heat bath
+  - GPU
+  - HIP
+  - CUDA
+  - reproducibility

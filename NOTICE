@@ -1,0 +1,13 @@
+su2-heatbath-gpu
+Copyright 2026 Kévin Rémondière
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The Philox4x32-10 generator is implemented from its published description: J. K. Salmon,
+M. A. Moraes, R. O. Dror and D. E. Shaw, "Parallel random numbers: as easy as 1, 2, 3", SC '11
+(2011), doi:10.1145/2063384.2063405. The three known-answer vectors checked by --selftest are those
+distributed with the Random123 library of D. E. Shaw Research (BSD 3-Clause license); no Random123
+source code is included in this repository.
+
+The code and the documentation were written by AI coding agents under the direction of the author
+(see AI_USE.md).

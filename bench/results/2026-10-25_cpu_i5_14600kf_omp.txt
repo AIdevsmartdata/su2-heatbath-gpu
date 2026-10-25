@@ -1,0 +1,32 @@
+# date_utc 2026-10-25T12:38:53Z
+# cpu Intel(R) Core(TM) i5-14600KF ; online_cpus 17
+# loadavg_before 0.53 0.38 0.16
+# mem_available_GiB 28,5
+# cxx g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+# su2_omp : 1 OpenMP threads
+BENCH_CPU L=16 beta=2.5 V=65536 threads=1 hb_sweeps=25 hb_s_per_sweep=4.567337e-02 or_sweeps=25 or_s_per_sweep=2.251935e-02 links_per_s_hb=5.7395e+06 links_per_s_or=1.1641e+07 P=0.6480952964 caps=0
+# su2_omp : 1 OpenMP threads
+BENCH_CPU L=24 beta=2.5 V=331776 threads=1 hb_sweeps=10 hb_s_per_sweep=2.325161e-01 or_sweeps=10 or_s_per_sweep=1.149168e-01 links_per_s_hb=5.7076e+06 links_per_s_or=1.1548e+07 P=0.6401815869 caps=0
+# su2_omp : 1 OpenMP threads
+BENCH_CPU L=32 beta=2.5 V=1048576 threads=1 hb_sweeps=4 hb_s_per_sweep=7.421599e-01 or_sweeps=4 or_s_per_sweep=3.706009e-01 links_per_s_hb=5.6515e+06 links_per_s_or=1.1318e+07 P=0.6249205775 caps=0
+# su2_omp : 8 OpenMP threads
+BENCH_CPU L=16 beta=2.5 V=65536 threads=8 hb_sweeps=100 hb_s_per_sweep=6.110328e-03 or_sweeps=100 or_s_per_sweep=3.151608e-03 links_per_s_hb=4.2902e+07 links_per_s_or=8.3178e+07 P=0.6518504217 caps=0
+# su2_omp : 8 OpenMP threads
+BENCH_CPU L=24 beta=2.5 V=331776 threads=8 hb_sweeps=40 hb_s_per_sweep=3.008729e-02 or_sweeps=40 or_s_per_sweep=1.719307e-02 links_per_s_hb=4.4108e+07 links_per_s_or=7.7188e+07 P=0.6504248973 caps=0
+# su2_omp : 8 OpenMP threads
+BENCH_CPU L=32 beta=2.5 V=1048576 threads=8 hb_sweeps=16 hb_s_per_sweep=9.832199e-02 or_sweeps=16 or_s_per_sweep=9.312282e-02 links_per_s_hb=4.2659e+07 links_per_s_or=4.5041e+07 P=0.6456173512 caps=0
+# loadavg_after 1.76 0.66 0.26
+written bench/out/cpu_20261025T123853Z.txt
+# date_utc 2026-10-25T12:39:17Z
+# cpu Intel(R) Core(TM) i5-14600KF ; online_cpus 17
+# loadavg_before 1.76 0.66 0.26
+# mem_available_GiB 28,5
+# cxx g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+# su2_omp : 17 OpenMP threads
+BENCH_CPU L=16 beta=2.5 V=65536 threads=17 hb_sweeps=100 hb_s_per_sweep=3.034880e-03 or_sweeps=100 or_s_per_sweep=1.530311e-03 links_per_s_hb=8.6377e+07 links_per_s_or=1.7130e+08 P=0.6518504217 caps=0
+# su2_omp : 17 OpenMP threads
+BENCH_CPU L=24 beta=2.5 V=331776 threads=17 hb_sweeps=40 hb_s_per_sweep=1.453974e-02 or_sweeps=40 or_s_per_sweep=8.247652e-03 links_per_s_hb=9.1274e+07 links_per_s_or=1.6091e+08 P=0.6504248973 caps=0
+# su2_omp : 17 OpenMP threads
+BENCH_CPU L=32 beta=2.5 V=1048576 threads=17 hb_sweeps=16 hb_s_per_sweep=6.247676e-02 or_sweeps=16 or_s_per_sweep=6.121212e-02 links_per_s_hb=6.7134e+07 links_per_s_or=6.8521e+07 P=0.6456173512 caps=0
+# loadavg_after 1.76 0.66 0.26
+written bench/out/cpu_20261025T123917Z.txt

@@ -1,0 +1,123 @@
+name: GPU Simulator
+
+# Optional, non-required check. The hosted runners have no GPU, so this builds
+# the CUDA and HIP generators and runs the repository's own tests/run_tests.sh
+# (T0 to T10, L = 6) on a simulated NVIDIA H100 and a simulated AMD MI300X
+# using PantheonSim (https://github.com/pantheongpu/pantheonsim). A simulator
+# cannot reproduce hardware-specific behavior or timing, so it complements
+# real-GPU testing and does not replace it. The bit-level anchors
+# (make anchor-cuda, anchor-hip) are for the reference platforms and are not run.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "src/**"
+      - "cpu/**"
+      - "reference/**"
+      - "tests/**"
+      - "tools/**"
+      - "Makefile"
+      - ".github/workflows/gpu-sim.yml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  cuda-tests:
+    name: CUDA 13.0 and simulated H100
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up the simulated GPU and CUDA toolkit
+        uses: pantheongpu/setup-pantheonsim@deff5781e8adfd83dec98dd5242dcbc96a564773 # v0.1.10
+        with:
+          gpu: nvidia/h100
+          cuda-toolkit: "13.0"
+
+      - name: Install numpy
+        run: sudo apt-get install -y --no-install-recommends python3-numpy
+
+      # compute_90 embeds PTX only, which the simulator runs, and the simulator
+      # needs a shared CUDA runtime. The tests call bin/su2_cuda directly, so the
+      # real binary is renamed and a small script in its place runs it under vgpu.
+      - name: Build
+        run: |
+          make cuda cpu NVCC="nvcc -cudart shared" CUDA_ARCH=compute_90
+          mv bin/su2_cuda bin/su2_cuda.real
+          printf '#!/bin/sh\nexec vgpu run "$(dirname "$0")/su2_cuda.real" "$@"\n' > bin/su2_cuda
+          chmod +x bin/su2_cuda
+
+      - name: Tests (T0 to T10)
+        run: |
+          set +e
+          tests/run_tests.sh cuda 2>&1 | while IFS= read -r l; do echo "$(date -u +%T) $l"; done | tee tests.log
+          rc=${PIPESTATUS[0]}
+          echo "run_tests.sh exit code $rc"
+          exit "$rc"
+
+      # A wrong architecture can print a simulator error and still exit 0, and a
+      # missing device must not pass silently.
+      - name: Check that the tests ran on the simulated device
+        if: always()
+        run: |
+          grep -E "^# su2_cuda : 1 GPU, NVIDIA H100" tests/out/cuda/t2_b0.5.log
+          if grep -rEi "VirtualGPU error|no device|no CUDA-capable|ERREUR" tests/out/cuda/*.log; then exit 1; fi
+          grep -qE " TESTS backend=cuda pass=12 fail=0$" tests.log
+          if grep -qE "^[0-9:]+ FAIL" tests.log; then exit 1; fi
+
+  hip-tests:
+    name: ROCm 7.2 and simulated MI300X
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Set up the simulated GPU and ROCm
+        uses: pantheongpu/setup-pantheonsim@deff5781e8adfd83dec98dd5242dcbc96a564773 # v0.1.10
+        with:
+          gpu: amd/mi300x
+          cuda-toolkit: none
+          rocm: "7.2"
+
+      # The action installs only the compiler side; comgr and the HSA runtime
+      # come on top.
+      - name: Install comgr, HSA runtime and numpy
+        run: sudo apt-get install -y --no-install-recommends comgr hsa-rocr python3-numpy
+
+      - name: Build
+        run: |
+          which hipcc
+          make hip cpu HIP_ARCH=gfx942
+          mv bin/su2_hip bin/su2_hip.real
+          printf '#!/bin/sh\nexec vgpu run "$(dirname "$0")/su2_hip.real" "$@"\n' > bin/su2_hip
+          chmod +x bin/su2_hip
+
+      - name: Tests (T0 to T10)
+        run: |
+          set +e
+          tests/run_tests.sh hip 2>&1 | while IFS= read -r l; do echo "$(date -u +%T) $l"; done | tee tests.log
+          rc=${PIPESTATUS[0]}
+          echo "run_tests.sh exit code $rc"
+          exit "$rc"
+
+      - name: Check that the tests ran on the simulated device
+        if: always()
+        run: |
+          grep -E "^# su2_hip : 1 GPU, .* gfx942" tests/out/hip/t2_b0.5.log
+          if grep -rEi "VirtualGPU error|no device|ERREUR" tests/out/hip/*.log; then exit 1; fi
+          grep -qE " TESTS backend=hip pass=12 fail=0$" tests.log
+          if grep -qE "^[0-9:]+ FAIL" tests.log; then exit 1; fi
